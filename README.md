@@ -1,4 +1,4 @@
-![image](https://github.com/fengyarui1/Handwritten-digit-recognition/assets/163635050/f86ad819-8e7a-47bf-bdf1-d752a2b0766e)# Handwritten-digit-recognition
+
 一、数据集描述
 
 MNIST数据集是一个经典的计算机视觉数据集，主要用于手写数字识别任务。以下是关于MNIST数据集的简单描述：
@@ -19,7 +19,7 @@ MNIST数据集是机器学习和深度学习领域中最受欢迎的数据集之
 6.模型性能：
 MNIST数据集相对简单，许多算法和模型在该数据集上都能取得较好的性能。
 
-
+![image](https://github.com/fengyarui1/Handwritten-digit-recognition/assets/163635050/f86ad819-8e7a-47bf-bdf1-d752a2b0766e)# Handwritten-digit-recognition
 图 1以下是所使用的MNIST数据集
 
 7.调用数据集：
@@ -76,8 +76,9 @@ Pillow是一个Python图像处理库，由Python Imaging Library（PIL）的一�
 卷积神经网络（Convolutional Neural Network，CNN）是一种在计算机视觉领域取得了巨大成功的深度学习模型。它们的设计灵感来自于生物学中的视觉系统，旨在模拟人类视觉处理的方式。在过去的几年中，CNN已经在图像识别、目标检测、图像生成和许多其他领域取得了显著的进展，成为了计算机视觉和深度学习研究的重要组成部分。
 
 (1)图像原理
-图像在计算机中是一堆按顺序排列的数字，数值为0到255。0表示最暗，255表示最亮。 如下图：
+图像在计算机中是一堆按顺序排列的数字，数值为0到255。0表示最暗，255表示最亮。 如下图：、
 
+![image](https://github.com/fengyarui1/Handwritten-digit-recognition/assets/163635050/5bb94b71-bf12-455f-bd50-3de8a5d95f7a)
 图 2图像原理
 上图是只有黑白颜色的灰度图，而更普遍的图片表达方式是RGB颜色模型，即红、绿、蓝三原色的色光以不同的比例相加，以产生多种多样的色光。RGB颜色模型中，单个矩阵就扩展成了有序排列的三个矩阵，也可以用三维张量去理解。
 其中的每一个矩阵又叫这个图片的一个channel（通道），宽, 高, 深来描述。
@@ -88,6 +89,7 @@ Pillow是一个Python图像处理库，由Python Imaging Library（PIL）的一�
 
 
  传统神经网络原理如下图：
+![image](https://github.com/fengyarui1/Handwritten-digit-recognition/assets/163635050/9e4b8090-eac1-4a69-add7-40637431b664)
 
 图 3传统神经网络原理
 我们希望一个物体不管在画面左侧还是右侧，都会被识别为同一物体，这一特点就是不变性。为了实现平移不变性，卷积神经网络（CNN）等深度学习模型在卷积层中使用了卷积操作，这个操作可以捕捉到图像中的局部特征而不受其位置的影响。
@@ -95,6 +97,7 @@ Pillow是一个Python图像处理库，由Python Imaging Library（PIL）的一�
 (3)什么是卷积？
 在卷积神经网络中，卷积操作是指将一个可移动的小窗口（称为数据窗口，如下图绿色矩形）与图像进行逐元素相乘然后相加的操作。这个小窗口其实是一组固定的权重，它可以被看作是一个特定的滤波器（filter）或卷积核。这个操作的名称“卷积”，源自于这种元素级相乘和求和的过程。这一操作是卷积神经网络名字的来源。
 简而言之，卷积操作就是用一个可移动的小窗口来提取图像中的特征，这个小窗口包含了一组特定的权重，通过与图像的不同位置进行卷积操作，网络能够学习并捕捉到不同特征的信息。
+![image](https://github.com/fengyarui1/Handwritten-digit-recognition/assets/163635050/f31d4eda-d5f4-43fe-aa46-7fc1eeec4aa1)
 
 图 4卷积过程
 
@@ -157,6 +160,8 @@ CNN通常由多个卷积和池化层的堆叠组成，以逐渐提取更高级�
 在testImg.py中，convolute_pool(img)函数就是卷积池化的过程，最后这个函数返回predint[0]的值就是识别的数字。
 
 
+![image](https://github.com/fengyarui1/Handwritten-digit-recognition/assets/163635050/d6515774-f541-4434-ace7-aac4cec4536b)
+![image](https://github.com/fengyarui1/Handwritten-digit-recognition/assets/163635050/dc33ec5f-42be-4652-8d54-f410a198bd47)
 
 图 5所要识别的图片和卷积池化后的图片
 
@@ -166,10 +171,12 @@ CNN通常由多个卷积和池化层的堆叠组成，以逐渐提取更高级�
 考虑到程序每次只能识别一个数字，那么是否能识别多个数字呢？
 在第一段其实就说了通过图画工具来写多个数字，而且n个数字的图片像素必须严格为28n*28。那么我们很快就能想到识别多个数字也就是把n个数字图片等分为n个28*28像素的小图片，通过调用testImg.py来依次识别。
 那么切割图片的工作就由cutPic.py来完成。
+![image](https://github.com/fengyarui1/Handwritten-digit-recognition/assets/163635050/d4964905-3859-41f1-ad6f-19f955dc7c3d)
 
 图 6cut（）函数
 
 切割完的小图片都保存在了pic文件夹中。
+![image](https://github.com/fengyarui1/Handwritten-digit-recognition/assets/163635050/5d74423e-a9cc-4b46-8907-467fbce2a538)
 
 图 7被切割成4个小图片
 
@@ -200,6 +207,7 @@ CNN通常由多个卷积和池化层的堆叠组成，以逐渐提取更高级�
 GUI界面的代码为imgGUI.py。
 (1)函数process_image()
 这个函数是将识别分割好的图片依次呈现到屏幕上的。在设想这一步的初期，预期是可以每打开一次图片就可以呈现一次分割好图片的内容，但是在完成第一次识别后，第二次识别完成后的图片堆叠在第一次的结果上了。那么就通过遍历 image_container的所有子元素并销毁它们，来清除旧的图片，这样每次识别就只输出新的内容了。
+![image](https://github.com/fengyarui1/Handwritten-digit-recognition/assets/163635050/bc9b98eb-87b0-4f52-96d9-be019beb354f)
 
 图 8更新输出内容
 
@@ -217,21 +225,27 @@ GUI界面的代码为imgGUI.py。
 
 3.效果呈现
 (1)打开界面
+![image](https://github.com/fengyarui1/Handwritten-digit-recognition/assets/163635050/4957fe91-3738-4e78-bd83-94a0e39c6167)
 
 
 (2)点击按钮打开文件夹
+![image](https://github.com/fengyarui1/Handwritten-digit-recognition/assets/163635050/6a41294c-00b4-4966-b477-8d457920e4b0)
 
 
 (3)识别单个数字
+![image](https://github.com/fengyarui1/Handwritten-digit-recognition/assets/163635050/35ca9d83-6fcf-4fb5-927c-02b98ba156f3)
 
 
 
 (4)识别多个数字
+![image](https://github.com/fengyarui1/Handwritten-digit-recognition/assets/163635050/e17bf68e-2df3-4496-91d9-b66b6d9962df)
+![image](https://github.com/fengyarui1/Handwritten-digit-recognition/assets/163635050/c75b47d0-2e5b-4e91-94f9-f587db5d6b59)
 
 
 
 
 (5)pic文件夹的更新
+![image](https://github.com/fengyarui1/Handwritten-digit-recognition/assets/163635050/48f4a7da-da16-476f-87c2-546ac77bdca6)
 
 
 
